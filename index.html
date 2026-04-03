@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VENTUNA168</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000000 60%),
+              linear-gradient(180deg, #0a1f3d, #000);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* โลโก้ */
+.logo {
+  width: 140px;
+  margin-top: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px gold, 0 0 60px orange;
+}
+
+/* ชื่อ */
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 0 0 20px gold;
+}
+
+/* ปุ่ม */
+.btn {
+  display: block;
+  margin: 15px auto;
+  padding: 18px;
+  width: 85%;
+  max-width: 400px;
+  border-radius: 15px;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(90deg, gold, orange);
+  box-shadow: 0 0 20px gold;
+  animation: pulse 1.5s infinite;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px gold;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px gold; }
+  100% { box-shadow: 0 0 30px orange; }
+}
+
+/* โปรโมชั่น */
+.promo {
+  width: 90%;
+  max-width: 450px;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 25px gold;
+}
+
+/* กล่อง */
+.box {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 15px;
+  margin: 15px auto;
+  width: 85%;
+  max-width: 400px;
+  box-shadow: 0 0 15px gold;
+}
+
+/* ฟอนต์โปรโมชั่น */
+.promo-text {
+  font-weight: bold;
+  font-size: 24px;
+  background: linear-gradient(90deg, #ffd700, #ff9900, #ffff66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 1.5s infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px gold; }
+  to { text-shadow: 0 0 30px orange; }
+}
+
+/* หิมะ */
+.snow span {
+  position: fixed;
+  top: -10px;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+
+/* เงินลอย */
+.money {
+  position: fixed;
+  top: -50px;
+  font-size: 20px;
+  animation: moneyFall linear infinite;
+}
+
+@keyframes moneyFall {
+  to { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- เอฟเฟก -->
+<div class="snow" id="snow"></div>
+<div id="money"></div>
+
+<!-- โลโก้ -->
+<img src="logo.jpg" class="logo">
+
+<div class="title">VENTUNA168</div>
+
+<!-- ปุ่ม -->
+<a href="https://member.ventuna168.com/register?s=jj&lang=th" class="btn" onclick="clickSound()">
+เข้าสู่ระบบ
+</a>
+
+<img src="promo.jpg" class="promo">
+
+<a href="https://member.ventuna168.com/register?s=jj&lang=th" onclick="clickSound()">
+  <div class="box promo-text">🎁 รับโปรโมชั่น</div>
+</a>
+
+<a href="https://lin.ee/nXKgYkE" class="btn" onclick="clickSound()">
+ติดต่อแอดมิน
+</a>
+
+<!-- เสียง -->
+<audio id="clickAudio">
+  <source src="https://www.myinstants.com/media/sounds/click.mp3">
+</audio>
+
+<script>
+// เสียงคลิก
+function clickSound() {
+  document.getElementById("clickAudio").play();
+}
+
+// หิมะ
+const snow = document.getElementById("snow");
+for (let i = 0; i < 60; i++) {
+  let s = document.createElement("span");
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDuration = (Math.random() * 5 + 3) + "s";
+  snow.appendChild(s);
+}
+
+// เงินลอย
+const money = document.getElementById("money");
+for (let i = 0; i < 25; i++) {
+  let m = document.createElement("div");
+  m.innerHTML = "💰";
+  m.className = "money";
+  m.style.left = Math.random() * 100 + "vw";
+  m.style.animationDuration = (Math.random() * 5 + 5) + "s";
+  money.appendChild(m);
+}
+</script>
+
+</body>
+</html>
